@@ -29,20 +29,20 @@
 
                 @foreach ($training_centers as $training_center)
                 <tr>
-                    <td>{{ $training_center->id }}</td>
-                    <td>{{ $training_center->name }}</td>
-                    <td>{{ $training_center->location }}</td>
+                    <td>{{ $training_center->['id'] }}</td>
+                    <td>{{ $training_center->['name'] }}</td>
+                    <td>{{ $training_center->['location'] }}</td>
 
                     <td>
-                        <a href="{{ route('training-center.show', $training_center->id) }}">Mostrar</a>
+                        <a href="{{ route('training-center.show', $training_center['id']) }}">Mostrar</a>
                     </td>
 
                     <td>
-                        <a href="{{ route('training-center.edit', $training_center->id) }}">Editar</a>
+                        <a href="{{ route('training-center.edit', $training_center['id']) }}">Editar</a>
                     </td>
 
                     <td>
-                        <form action="{{ route('training-center.destroy', $training_center->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('training-center.destroy', $training_center['id']) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">

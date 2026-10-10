@@ -27,20 +27,20 @@
 
                 @foreach ($areas as $area)
                 <tr>
-                    <td>{{ $area->id }}</td>
-                    <td>{{ $area->name }}</td>
+                    <td>{{ $area['id'] }}</td>
+                    <td>{{ $area['name'] }}</td>
 
 
                     <td>
-                        <a href="{{ route('area.show', $area->id) }}">Mostrar</a>
+                        <a href="{{ route('area.show', $area['id']) }}">Mostrar</a>
                     </td>
 
                     <td>
-                        <a href="{{ route('area.edit', $area->id) }}">Editar</a>
+                        <a href="{{ route('area.edit', $area['id']) }}">Editar</a>
                     </td>
 
                     <td>
-                        <form action="{{ route('area.destroy', $area->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('area.destroy', $area['id']) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">

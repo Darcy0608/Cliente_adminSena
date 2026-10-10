@@ -7,7 +7,7 @@
     </h1>
     <br>
 
-    <form action="{{ route('area.update', $area) }}" method="POST">
+    <form action="{{ route('area.update', $area['id']) }}" method="POST">
 
         @csrf
         @method('put')
@@ -15,7 +15,7 @@
         <label>
             Nombre:
             <br>
-            <input type="text" name="name" value="{{ old('name', $area->name)}}">
+            <input type="text" name="name" value="{{ old('name', $area['name'])}}">
         </label>
         <br><br>
         

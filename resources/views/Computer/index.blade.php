@@ -30,20 +30,20 @@
 
             @foreach ($computers as $computer)
             <tr>
-                <td>{{ $computer->id }}</td>
-                <td>{{ $computer->number }}</td>
-                <td>{{ $computer->brand }}</td>
+                <td>{{ $computer['id'] }}</td>
+                <td>{{ $computer['number'] }}</td>
+                <td>{{ $computer['brand'] }}</td>
 
                 <td>
-                    <a href="{{ route('computer.show', $computer->id) }}">Mostrar</a>
+                    <a href="{{ route('computer.show', $computer['id']) }}">Mostrar</a>
                 </td>
 
                 <td>
-                    <a href="{{ route('computer.edit', $computer->id) }}">Editar</a>
+                    <a href="{{ route('computer.edit', $computer['id']) }}">Editar</a>
                 </td>
 
                 <td>
-                    <form action="{{ route('computer.destroy', $computer->id) }}" method="POST" style="display:inline;">
+                    <form action="{{ route('computer.destroy', $computer['id']) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">

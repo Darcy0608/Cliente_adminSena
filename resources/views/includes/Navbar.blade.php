@@ -102,7 +102,7 @@
 
         <!-- LOGO + ADMIN SENA -->
         <a class="navbar-brand nav-link-pill d-flex align-items-center nav-link-pill"
-            href="{{ route('home') }}">
+            href="{{ route('home.index') }}">
 
 
             <span class="bg-white rounded p-1 me-2">
@@ -174,7 +174,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="{{ route('training_environment.index') }}"> Ver Ambientes de Formación</a>
+                            <a class="dropdown-item" href="{{ route('training-environment.index') }}"> Ver Ambientes de Formación</a>
                         </li>
                     </ul>
                 </li>
@@ -182,7 +182,7 @@
                 <!-- QUIÉNES SOMOS -->
                 <li class="nav-item">
                     <a class="nav-link fw-bold nav-link-pill d-flex align-items-center"
-                        href="{{ route('home') }}#quienes-somos">
+                        href="{{ route('home.index') }}#quienes-somos">
                         Quiénes somos?
                     </a>
                 </li>

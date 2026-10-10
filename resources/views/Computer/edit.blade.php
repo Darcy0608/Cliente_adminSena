@@ -1,4 +1,3 @@
-```blade
 @extends('layouts.app')
 
 @section('content')
@@ -7,7 +6,7 @@
     </h1>
     <br>
 
-    <form action="{{ route('computer.update', $computer) }}" method="POST">
+    <form action="{{ route('computer.update', $computer['id']) }}" method="POST">
 
         @csrf
         @method('put')
@@ -15,14 +14,14 @@
         <label>
             Número:
             <br>
-            <input type="number" name="number" value="{{ old('number', $computer->number) }}">
+            <input type="text" name="number" value="{{ old('number', $computer['number']) }}">
         </label>
         <br>
 
         <label>
             Marca:
             <br>
-            <input type="text" name="brand" value="{{ old('brand', $computer->brand) }}">
+            <input type="text" name="brand" value="{{ old('brand', $computer['brand']) }}">
         </label>
         <br><br>
 
