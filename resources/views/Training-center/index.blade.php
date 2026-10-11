@@ -33,20 +33,24 @@
                     <td>{{ $training_center['name'] }}</td>
                     <td>{{ $training_center['location'] }}</td>
 
+                    <!-- Botón Mostrar -->
                     <td>
-                        <a href="{{ route('training-center.show', $training_center['id']) }}">Mostrar</a>
+                        <a href="{{ route('training-center.show', $training_center['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
                     </td>
 
+                    <!-- Botón Editar -->
                     <td>
-                        <a href="{{ route('training-center.edit', $training_center['id']) }}">Editar</a>
+                        <a href="{{ route('training-center.edit', $training_center['id']) }}" class="btn btn-warning btn-sm text-white"> Editar </a>
                     </td>
 
+                    <!-- Botón Eliminar -->
                     <td>
-                        <form action="{{ route('training-center.destroy', $training_center['id']) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('training-center.destroy', $training_center['id']) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">
-                                <i class="bi bi-trash"></i> Borrar
+
+                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                <i class="bi bi-trash"></i>
                             </button>
                         </form>
                     </td>

@@ -31,27 +31,29 @@
                     <td>{{ $area['name'] }}</td>
 
 
+                    <!-- Botón Mostrar -->
                     <td>
-                        <a href="{{ route('area.show', $area['id']) }}">Mostrar</a>
+                        <a href="{{ route('area.show', $area['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
                     </td>
 
+                    <!-- Botón Editar -->
                     <td>
-                        <a href="{{ route('area.edit', $area['id']) }}">Editar</a>
+                        <a href="{{ route('area.edit', $area['id']) }}" class="btn btn-warning btn-sm text-white"> Editar </a>
                     </td>
 
+                    <!-- Botón Eliminar -->
                     <td>
-                        <form action="{{ route('area.destroy', $area['id']) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('area.destroy', $area['id']) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">
-                                <i class="bi bi-trash"></i> Borrar
+
+                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                <i class="bi bi-trash"></i>
                             </button>
                         </form>
                     </td>
                 </tr>
-
                 @endforeach
-
             </tbody>
         </table>
     </div>

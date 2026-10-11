@@ -50,12 +50,12 @@
                 <td>
                     @if ($training_environment['urlFoto'])
 
-                        <img src="{{ asset('storage/images/' . $training_environment['urlFoto']) }}"
-                            alt="Foto Ambiente de Formación"
-                            width="60"
-                            class="img-thumbnail">
+                    <img src="{{ asset('storage/images/' . $training_environment['urlFoto']) }}"
+                        alt="Foto Ambiente de Formación"
+                        width="60"
+                        class="img-thumbnail">
                     @else
-                        <span class="badge bg-secondary"> Sin foto </span>
+                    <span class="badge bg-secondary"> Sin foto </span>
                     @endif
                 </td>
 
@@ -66,23 +66,25 @@
                 <td>{{ $training_environment['location'] }}</td>
                 <td> {{ $training_environment['status'] }} </td>
 
+                <!-- Botón Mostrar -->
                 <td>
-                    <a href="{{ route('training-environment.show', $training_environment['id']) }}"> Mostrar </a>
+                    <a href="{{ route('training-environment.show', $training_environment['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
                 </td>
 
+                <!-- Botón Editar -->
                 <td>
-                    <a href="{{ route('training-environment.edit', $training_environment['id']) }}"> Editar </a>
+                    <a href="{{ route('training-environment.edit', $training_environment['id']) }}" class="btn btn-warning btn-sm text-white"> Editar </a>
                 </td>
 
+                <!-- Botón Eliminar -->
                 <td>
-                    <form action="{{ route('training-environment.destroy', $training_environment['id']) }}"
-                        method="POST"
-                        style="display:inline;">
-
+                    <form action="{{ route('training-environment.destroy', $training_environment['id']) }}" method="POST">
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Ambiente"><i class="bi bi-trash"></i> Borrar </button>
+                        <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                            <i class="bi bi-trash"></i>
+                        </button>
                     </form>
                 </td>
             </tr>

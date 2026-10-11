@@ -7,7 +7,6 @@
 <div class="container">
 
     <div class="container">
-        <!-- CABECERA DE LA PÁGINA: Título a la izquierda + Botón a la derecha -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="fw-bold text-success m-0" style="color: #16780c !important;">
                 Listado de Cursos
@@ -22,10 +21,10 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Course Number</th>
-                    <th>Day</th>
+                    <th>Numero del curso</th>
+                    <th>Día</th>
                     <th>Area</th>
-                    <th>Training Center</th>
+                    <th>Centro de Formación</th>
                     <th colspan="3">Acción</th>
                 </tr>
             </thead>
@@ -36,26 +35,30 @@
 
                 <tr>
 
-                    <td>{{ $course->id }}</td>
-                    <td>{{ $course->course_number }}</td>
-                    <td>{{ $course->day }}</td>
-                    <td>{{ optional($course->area)->name }}</td>
-                    <td>{{ optional($course->trainingCenter)->name }}</td>
+                    <td>{{ $course['id'] }}</td>
+                    <td>{{ $course['course_number'] }}</td>
+                    <td>{{ $course['day'] }}</td>
+                    <td>{{ optional($course['area'])['name'] }}</td>
+                    <td>{{ optional($course['training_center'])['name'] ?? 'Sin centro de formación' }}</td>
 
+                    <!-- Botón Mostrar -->
                     <td>
-                        <a href="{{ route('course.show', $course->id) }}">Mostrar</a>
+                        <a href="{{ route('course.show', $course['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
                     </td>
 
+                    <!-- Botón Editar -->
                     <td>
-                        <a href="{{ route('course.edit', $course->id) }}">Editar</a>
+                        <a href="{{ route('course.edit', $course['id']) }}" class="btn btn-warning btn-sm text-white"> Editar </a>
                     </td>
 
+                    <!-- Botón Eliminar -->
                     <td>
-                        <form action="{{ route('course.destroy', $course->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('course.destroy', $course['id']) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">
-                                <i class="bi bi-trash"></i> Borrar
+
+                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                <i class="bi bi-trash"></i>
                             </button>
                         </form>
                     </td>

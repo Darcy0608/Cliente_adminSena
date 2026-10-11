@@ -32,10 +32,6 @@ class HomeController extends Controller
         $totalTeachers = count($teachers);
 
         // Enviamos los totales a la vista home
-        return view('home', compact(
-            'totalCourses',
-            'totalApprentices',
-            'totalTeachers'
-        ));
+        return view('home', compact('totalCourses', 'totalApprentices', 'totalTeachers'));
     }
 }

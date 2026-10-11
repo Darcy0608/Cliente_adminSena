@@ -35,30 +35,33 @@
 
                 <tr>
 
-                    <td>{{ $teacher->id }}</td>
-                    <td>{{ $teacher->name }}</td>
-                    <td>{{ $teacher->email }}</td>
-                    <td>{{ optional($teacher->area)->name }}</td>
-                    <td>{{ optional($teacher->trainingCenter)->name }}</td>
+                    <td>{{ $teacher['id'] }}</td>
+                    <td>{{ $teacher['name'] }}</td>
+                    <td>{{ $teacher['email'] }}</td>
+                    <td>{{ $teacher['area']['name'] ?? 'Sin área' }}</td>
+                    <td>{{ $teacher['training_center']['name'] ?? 'Sin centro' }}</td>
 
+                    <!-- Botón Mostrar -->
                     <td>
-                        <a href="{{ route('teacher.show', $teacher->id) }}">Mostrar</a>
+                        <a href="{{ route('teacher.show', $teacher['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
                     </td>
 
+                    <!-- Botón Editar -->
                     <td>
-                        <a href="{{ route('teacher.edit', $teacher->id) }}">Editar</a>
+                        <a href="{{ route('teacher.edit', $teacher['id']) }}" class="btn btn-warning btn-sm text-white"> Editar </a>
                     </td>
 
+                    <!-- Botón Eliminar -->
                     <td>
-                        <form action="{{ route('teacher.destroy', $teacher->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('teacher.destroy', $teacher['id']) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">
-                                <i class="bi bi-trash"></i> Borrar
+
+                            <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                <i class="bi bi-trash"></i>
                             </button>
                         </form>
                     </td>
-
                 </tr>
 
                 @endforeach

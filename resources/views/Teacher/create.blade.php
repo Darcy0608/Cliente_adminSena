@@ -46,27 +46,27 @@
                 required>
         </div>
 
-        <!-- Selección Área -->
+        <!-- Seleccionar Área -->
         <div class="mb-3">
             <label for="area_id" class="form-label fw-semibold">Área:</label>
             <select name="area_id" id="area_id" class="form-select" required>
                 <option value="">Seleccione un área</option>
                 @foreach($areas as $area)
-                <option value="{{ $area->id }}" {{ old('area_id') == $area->id ? 'selected' : '' }}>
-                    {{ $area->name }}
+                <option value="{{ $area['id'] }}" {{ old('area_id') == $area['id'] ? 'selected' : '' }}>
+                    {{ $area['name'] }}
                 </option>
                 @endforeach
             </select>
         </div>
 
-        <!-- Selección Centro de Formacion -->
+        <!-- Seleccionar Centro de Formacion -->
         <div class="mb-3">
             <label for="training_center_id" class="form-label fw-semibold">Centro de Formación:</label>
             <select name="training_center_id" id="training_center_id" class="form-select" required>
                 <option value="">Seleccione un centro de formación</option>
                 @foreach($training_centers as $training_center)
-                <option value="{{ $training_center->id }}" {{ old('training_center_id') == $training_center->id ? 'selected' : '' }}>
-                    {{ $training_center->name }}
+                <option value="{{ $training_center['id'] }}" {{ old('training_center_id') == $training_center['id'] ? 'selected' : '' }}>
+                    {{ $training_center['name'] }}
                 </option>
                 @endforeach
             </select>

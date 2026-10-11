@@ -1,53 +1,100 @@
 @extends('layouts.app')
 
 @section('content')
-    
-    <h1 class="fw-bold text-success m-0" style="color: #16780c !important;">
-       Actualizar Curso
+
+<div class="container mt-4">
+
+    <h1 class="fw-bold text-success mb-4" style="color: #16780c !important;">
+        Actualizar Curso
     </h1>
-    <br>
 
-    <form action="{{ route('course.update', $course) }}" method="POST">
+    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
 
-        @csrf
-        @method('put')
+        <form action="{{ route('course.update', $course['id']) }}" method="POST">
 
+            @csrf
+            @method('PUT')
 
-        <label>
-            Numero de Curso:
-            <br>
-            <input type="number" name="course_number" value="{{ old('course_number', $course->course_number) }}">
-        </label>
-        <br>
+            <div class="mb-3">
+                <label for="course_number" class="form-label fw-semibold">
+                    Número de ficha:
+                </label>
 
-        <label>
-            Día:
-            <br>
-            <input type="date" name="day" value="{{ old('day', $course->day) }}">
-        </label>
-        <br>
+                <input type="text"
+                    name="course_number"
+                    id="course_number"
+                    class="form-control"
+                    value="{{ old('course_number', $course['course_number']) }}"
+                    required>
+            </div>
 
-        <label>
-            Área:
-            <br>
-            <input type="number" name="area_id" value="{{ old('area_id', $course->area_id) }}">
-        </label>
-        <br>
+            <div class="mb-3">
+                <label for="day" class="form-label fw-semibold">
+                    Jornada:
+                </label>
 
-        <label>
-            Centro de Formación:
-            <br>
-            <input type="number" name="training_center_id" value="{{ old('training_center_id', $course->training_center_id) }}">
-        </label>
+                <input type="text"
+                    name="day"
+                    id="day"
+                    class="form-control"
+                    value="{{ old('day', $course['day']) }}"
+                    required>
+            </div>
 
-        <br><br>
+            <div class="mb-3">
+                <label for="area_id" class="form-label fw-semibold">
+                    Área:
+                </label>
 
-        <button type="submit">Actualizar Curso</button>
-        <br><br>
+                <select name="area_id" id="area_id" class="form-select" required>
+                    <option value="">Seleccione un área</option>
 
-        <a href="{{ route('course.index') }}" class="btn btn-success mb-3">
-            <i class="bi bi-box-arrow-left"></i></i> Volver </a>
-        </a>
+                    @foreach ($areas as $area)
+                        <option value="{{ $area['id'] }}"
+                            {{ old('area_id', $course['area_id']) == $area['id'] ? 'selected' : '' }}>
+                            {{ $area['name'] }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
 
-    </form>
+            <div class="mb-3">
+                <label for="training_center_id" class="form-label fw-semibold">
+                    Centro de formación:
+                </label>
+
+                <select name="training_center_id"
+                    id="training_center_id"
+                    class="form-select"
+                    required>
+
+                    <option value="">Seleccione un centro de formación</option>
+
+                    @foreach ($training_centers as $training_center)
+                        <option value="{{ $training_center['id'] }}"
+                            {{ old('training_center_id', $course['training_center_id']) == $training_center['id'] ? 'selected' : '' }}>
+                            {{ $training_center['name'] }}
+                        </option>
+                    @endforeach
+
+                </select>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+
+                <button type="submit"
+                    class="btn btn-success fw-semibold px-4 rounded-3"
+                    style="background-color: #16780c;">
+                    Actualizar Curso
+                </button>
+
+                <a href="{{ route('course.index') }}"
+                    class="btn btn-outline-secondary rounded-3 px-3">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
 @endsection

@@ -8,7 +8,7 @@
 
         <div class="card-header bg-primary text-white">
             <h3 class="mb-0">
-                {{ $teacher->name ?? $teacher['name'] }}
+                {{ $teacher['name'] }}
             </h3>
         </div>
 
@@ -19,23 +19,21 @@
                 <div class="col-md-6 mb-3">
                     <label class="fw-bold">ID</label>
                     <div class="form-control">
-                        {{ $teacher->id ?? $teacher['id'] }}
+                        {{ $teacher['id'] }}
                     </div>
                 </div>
 
-                {{-- Muestra el Nombre del Área en lugar del ID --}}
                 <div class="col-md-6 mb-3">
                     <label class="fw-bold">Área</label>
                     <div class="form-control">
-                        {{ $teacher->area->name ?? $teacher['area']['name'] ?? 'Sin área' }}
+                        {{ $teacher['area']['name'] ?? 'Sin área' }}
                     </div>
                 </div>
 
-                {{-- Muestra el Nombre del Centro de Formación en lugar del ID --}}
                 <div class="col-md-6 mb-3">
                     <label class="fw-bold">Centro de Formación</label>
                     <div class="form-control">
-                        {{ $teacher->trainingCenter->name ?? $teacher->training_center->name ?? $teacher['training_center']['name'] ?? 'Sin centro' }}
+                        {{ $teacher['training_center']['name'] ?? 'Sin centro' }}
                     </div>
                 </div>
 
@@ -44,14 +42,14 @@
             <div class="mb-3">
                 <label class="fw-bold">Nombre</label>
                 <div class="form-control">
-                    {{ $teacher->name ?? $teacher['name'] }}
+                    {{ $teacher['name'] }}
                 </div>
             </div>
 
             <div class="mb-3">
                 <label class="fw-bold">Email</label>
                 <div class="form-control">
-                    {{ $teacher->email ?? $teacher['email'] }}
+                    {{ $teacher['email'] }}
                 </div>
             </div>
 

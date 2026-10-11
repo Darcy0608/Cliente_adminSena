@@ -6,7 +6,6 @@
     Formulario Registrar Aprendices
 </h1>
 
-<!-- Contenedor principal con diseño de tarjeta -->
 <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
     <form action="{{ route('apprentice.store') }}" method="POST" enctype="multipart/form-data">
 
@@ -48,7 +47,7 @@
                 required>
         </div>
 
-        <!-- Teléfono -->
+        <!-- Telefono -->
         <div class="mb-3">
             <label for="cell_number" class="form-label fw-semibold">Número de teléfono:</label>
             <input type="tel"
@@ -60,27 +59,27 @@
                 required>
         </div>
 
-        <!-- Seleccion de Curso -->
+        <!-- Seleccionar Curso -->
         <div class="mb-3">
             <label for="course_id" class="form-label fw-semibold">Curso:</label>
             <select name="course_id" id="course_id" class="form-select" required>
                 <option value="">Seleccione un curso</option>
                 @foreach($courses as $course)
-                <option value="{{ $course->id }}" {{ old('course_id') == $course->id ? 'selected' : '' }}>
-                    {{ $course->course_number }}
+                <option value="{{ $course['id'] }}" {{ old('course_id') == $course['id'] ? 'selected' : '' }}>
+                    {{ $course['course_number'] }}
                 </option>
                 @endforeach
             </select>
         </div>
 
-        <!-- Seleccion de computador -->
+        <!-- Seleccionar computador -->
         <div class="mb-3">
             <label for="computer_id" class="form-label fw-semibold">Equipo:</label>
             <select name="computer_id" id="computer_id" class="form-select" required>
                 <option value="">Seleccione un equipo</option>
                 @foreach($computers as $computer)
-                <option value="{{ $computer->id }}" {{ old('computer_id') == $computer->id ? 'selected' : '' }}>
-                    {{ $computer->number }}
+                <option value="{{ $computer['id']}}" {{ old('computer_id') == $computer['id'] ? 'selected' : '' }}>
+                    {{ $computer['number'] }}
                 </option>
                 @endforeach
             </select>

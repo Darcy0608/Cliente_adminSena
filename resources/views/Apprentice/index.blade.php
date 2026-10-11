@@ -5,7 +5,6 @@
 
 <div class="container">
 
-    <!-- CABECERA DE LA PÁGINA: Título a la izquierda + Botón a la derecha -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="fw-bold text-success m-0" style="color: #16780c !important;">
             Listado de Aprendices
@@ -32,35 +31,33 @@
 
             @foreach ($apprentices as $apprentice)
             <tr>
-                <td>{{ $apprentice->id }}</td>
-                <td>{{ $apprentice->Identity_card}}</td>
-                <td>{{ $apprentice->name }}</td>
-                <td>{{ $apprentice->email }}</td>
-                <td>{{ $apprentice->cell_number }}</td>
+                <td>{{ $apprentice['id'] }}</td>
+                <td>{{ $apprentice['Identity_card']}}</td>
+                <td>{{ $apprentice['name'] }}</td>
+                <td>{{ $apprentice['email'] }}</td>
+                <td>{{ $apprentice['cell_number'] }}</td>
 
-                <td>{{ $apprentice->course->course_number ?? 'Sin curso' }}</td>
-                <td>{{ $apprentice->computer->brand ?? 'Sin computador'}}</td>
+                <td>{{ $apprentice['course']['course_number'] ?? 'Sin curso' }}</td>
+                <td>{{ $apprentice['computer']['brand'] ?? 'Sin computador'}}</td>
 
                 <!-- Boton Mostrar -->
                 <td>
-                    <a href="{{ route('apprentice.show', $apprentice->id) }}" class="btn btn-info btn-sm text-white" title="Mostrar">
-                        <i class="bi bi-eye"></i>
-                    </a>
+                    <a href="{{ route('apprentice.show', $apprentice['id']) }}" class="btn btn-info btn-sm text-white" title="Mostrar">Mostrar</a>
                 </td>
+                
                 <!-- Boton Editar -->
                 <td>
-                    <a href="{{ route('apprentice.edit', $apprentice->id) }}" class="btn btn-warning btn-sm text-white" title="Editar">
-                        <i class="bi bi-pencil-square"></i>
-                    </a>
+                    <a href="{{ route('apprentice.edit', $apprentice['id']) }}" class="btn btn-warning btn-sm text-white" title="Editar">Editar</a>
                 </td>
-                <!-- Boton Borrar y Modal -->
+
+                <!-- Boton Borrar -->
                 <td>
-                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar{{ $apprentice->id }}" title="Eliminar">
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar{{ $apprentice['id']}}" title="Eliminar">
                         <i class="bi bi-trash"></i>
                     </button>
 
                     <!-- Modal de Confirmación individual por registro -->
-                    <div class="modal fade" id="modalEliminar{{ $apprentice->id }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal fade" id="modalEliminar{{ $apprentice['id'] }}" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content border-0 shadow rounded-4 overflow-hidden">
                                 <div class="modal-header bg-danger text-white">
@@ -71,10 +68,10 @@
                                 </div>
                                 <div class="modal-body text-center p-4">
                                     <p class="fs-5 mb-1 text-dark">¿Seguro que quieres eliminar este registro?</p>
-                                    <p class="text-muted small"><strong>{{ $apprentice->name }}</strong> ({{ $apprentice->Identity_card }})</p>
+                                    <p class="text-muted small"><strong>{{ $apprentice['name'] }}</strong> ({{ $apprentice['Identity_card'] }})</p>
                                 </div>
                                 <div class="modal-footer bg-light border-0">
-                                    <form action="{{ route('apprentice.destroy', $apprentice->id) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('apprentice.destroy', $apprentice['id']) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">
