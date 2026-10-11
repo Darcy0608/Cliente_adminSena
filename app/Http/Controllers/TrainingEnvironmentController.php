@@ -20,12 +20,12 @@ class TrainingEnvironmentController extends Controller
 
         $training_environments = $this->fetchDataFromApi($url . '/training-environment/index');
         // return $training_environments;
-        return view('training_environment.index', compact('training_environments'));
+        return view('training-environment.index', compact('training_environments'));
     }
 
 
     public function create(){
-        return view('training_environment.create');
+        return view('training-environment.create');
     }
 
 
@@ -34,7 +34,7 @@ class TrainingEnvironmentController extends Controller
         $url = env('URL_SERVER_API');
 
         Http::post($url . '/training-environment', $request->all());
-        return redirect()->route('training_environment.index');
+        return redirect()->route('training-environment.index');
     }
 
 
@@ -43,7 +43,7 @@ class TrainingEnvironmentController extends Controller
         $url = env('URL_SERVER_API');
 
         $training_environment = $this->fetchDataFromApi($url . '/training-environment/' . $id);
-        return view('training_environment.show', compact('training_environment'));
+        return view('training-environment.show', compact('training_environment'));
     }
 
 
@@ -52,7 +52,7 @@ class TrainingEnvironmentController extends Controller
         $url = env('URL_SERVER_API');
 
         $training_environment = $this->fetchDataFromApi($url . '/training-environment/' . $id);
-        return view('training_environment.edit', compact('training_environment'));
+        return view('training-environment.edit', compact('training_environment'));
     }
 
 
@@ -61,7 +61,7 @@ class TrainingEnvironmentController extends Controller
         $url = env('URL_SERVER_API');
 
         Http::put($url . '/training-environment/' . $id, $request->all());
-        return redirect()->route('training_environment.index');
+        return redirect()->route('training-environment.index');
     }
 
 
@@ -70,6 +70,6 @@ class TrainingEnvironmentController extends Controller
         $url = env('URL_SERVER_API');
 
         Http::delete($url . '/training-environment/' . $id);
-        return redirect()->route('training_environment.index');
+        return redirect()->route('training-environment.index');
     }
 }

@@ -12,7 +12,7 @@
             Listado de Ambientes
         </h1>
 
-        <a href="{{ route('training_environment.create') }}"
+        <a href="{{ route('training-environment.create') }}"
             class="btn text-white fw-semibold px-3 py-2 shadow-sm"
             style="background-color: #16780c;">
 
@@ -43,14 +43,14 @@
             <tr>
                 <!-- Id -->
                 <td>
-                    {{ $training_environment->id }}
+                    {{ $training_environment['id'] }}
                 </td>
 
                 <!-- Foto del Ambiente -->
                 <td>
-                    @if ($training_environment->urlFoto)
+                    @if ($training_environment['urlFoto'])
 
-                        <img src="{{ asset('storage/images/' . $training_environment->urlFoto) }}"
+                        <img src="{{ asset('storage/images/' . $training_environment['urlFoto']) }}"
                             alt="Foto Ambiente de Formación"
                             width="60"
                             class="img-thumbnail">
@@ -59,23 +59,23 @@
                     @endif
                 </td>
 
-                <td>{{ $training_environment->name }}</td>
-                <td>{{ $training_environment->code }} </td>
-                <td>{{ $training_environment->type }}</td>
-                <td>{{ $training_environment->capacity }}</td>
-                <td>{{ $training_environment->location }}</td>
-                <td> {{ $training_environment->status }} </td>
+                <td>{{ $training_environment['name'] }}</td>
+                <td>{{ $training_environment['code'] }} </td>
+                <td>{{ $training_environment['type'] }}</td>
+                <td>{{ $training_environment['capacity'] }}</td>
+                <td>{{ $training_environment['location'] }}</td>
+                <td> {{ $training_environment['status'] }} </td>
 
                 <td>
-                    <a href="{{ route('training_environment.show', $training_environment->id) }}"> Mostrar </a>
+                    <a href="{{ route('training-environment.show', $training_environment['id']) }}"> Mostrar </a>
                 </td>
 
                 <td>
-                    <a href="{{ route('training_environment.edit', $training_environment->id) }}"> Editar </a>
+                    <a href="{{ route('training-environment.edit', $training_environment['id']) }}"> Editar </a>
                 </td>
 
                 <td>
-                    <form action="{{ route('training_environment.destroy', $training_environment->id) }}"
+                    <form action="{{ route('training-environment.destroy', $training_environment['id']) }}"
                         method="POST"
                         style="display:inline;">
 

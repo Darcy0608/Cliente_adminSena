@@ -29,9 +29,9 @@
 
                 @foreach ($training_centers as $training_center)
                 <tr>
-                    <td>{{ $training_center->['id'] }}</td>
-                    <td>{{ $training_center->['name'] }}</td>
-                    <td>{{ $training_center->['location'] }}</td>
+                    <td>{{ $training_center['id'] }}</td>
+                    <td>{{ $training_center['name'] }}</td>
+                    <td>{{ $training_center['location'] }}</td>
 
                     <td>
                         <a href="{{ route('training-center.show', $training_center['id']) }}">Mostrar</a>

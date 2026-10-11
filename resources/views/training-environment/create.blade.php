@@ -8,7 +8,7 @@
 
 <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
 
-    <form action="{{ route('training_environment.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('training-environment.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label fw-semibold">
@@ -120,7 +120,7 @@
                 Enviar Formulario
             </button>
 
-            <a href="{{ route('training_environment.index') }}"
+            <a href="{{ route('training-environment.index') }}"
                 class="btn btn-outline-secondary rounded-3 px-3">
                 Cancelar
             </a>

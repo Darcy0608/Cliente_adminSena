@@ -164,7 +164,7 @@
 
     <div class="d-flex justify-content-end mt-4">
 
-        <a href="{{ route('training_environment.index') }}"
+        <a href="{{ route('training-environment.index') }}"
             class="btn btn-success">
             <i class="bi bi-box-arrow-left"></i>
             Volver
