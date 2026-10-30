@@ -19,8 +19,9 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Location</th>
+                    <th>Nombre</th>
+                    <th>Ubicación</th>
+                    <th>Imagen</th>
                     <th colspan="3">Acción</th>
                 </tr>
             </thead>
@@ -33,9 +34,13 @@
                     <td>{{ $training_center['name'] }}</td>
                     <td>{{ $training_center['location'] }}</td>
 
-                    <!-- Botón Mostrar -->
                     <td>
-                        <a href="{{ route('training-center.show', $training_center['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
+                        <img src="{{ $training_center['imagen_url'] }}" alt="{{ $training_center['name'] }}" width="100">
+                    </td>
+
+                   <!-- Boton Mostrar -->
+                    <td>
+                        <a href="{{ route('training-center.show', $training_center['id']) }}" class="btn btn-sm text-white" style="background-color: #3264ab;" title="Mostrar">Mostrar</a>
                     </td>
 
                     <!-- Botón Editar -->

@@ -66,10 +66,10 @@
                 <td>{{ $training_environment['location'] }}</td>
                 <td> {{ $training_environment['status'] }} </td>
 
-                <!-- Botón Mostrar -->
-                <td>
-                    <a href="{{ route('training-environment.show', $training_environment['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
-                </td>
+                <!-- Boton Mostrar -->
+                    <td>
+                        <a href="{{ route('training-environment.show', $training_environment['id']) }}" class="btn btn-sm text-white" style="background-color: #3264ab;" title="Mostrar">Mostrar</a>
+                    </td>
 
                 <!-- Botón Editar -->
                 <td>

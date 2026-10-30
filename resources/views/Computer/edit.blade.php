@@ -27,6 +27,19 @@
         </label>
         <br><br>
 
+        <!-- Imagen actual -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Imagen actual:</label>
+            <br>
+            <img src="{{ $computer['imagen_url'] }}" alt="{{ $computer['number'] }}" width="120">
+        </div>
+
+        <!-- Nueva imagen -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Cambiar imagen:</label>
+            <input type="file" name="imagen" class="form-control" accept="image/*">
+        </div>
+
         <button type="submit">Actualizar Computador</button>
         <br>
         <br>

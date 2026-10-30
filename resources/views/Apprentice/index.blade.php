@@ -9,7 +9,9 @@
         <h1 class="fw-bold text-success m-0" style="color: #16780c !important;">
             Listado de Aprendices
         </h1>
-        <a href="{{ route('apprentice.create') }}" class="btn text-white fw-semibold px-3 py-2 shadow-sm" style="background-color: #16780c;">
+        <a href="{{ route('apprentice.create') }}"
+            class="btn text-white fw-semibold px-3 py-2 shadow-sm"
+            style="background-color: #16780c;">
             <i class="bi bi-plus-lg me-1"></i> Nuevo Aprendiz
         </a>
     </div>
@@ -42,9 +44,9 @@
 
                 <!-- Boton Mostrar -->
                 <td>
-                    <a href="{{ route('apprentice.show', $apprentice['id']) }}" class="btn btn-info btn-sm text-white" title="Mostrar">Mostrar</a>
+                    <a href="{{ route('apprentice.show', $apprentice['id']) }}" class="btn btn-sm text-white" style="background-color: #235294;" title="Mostrar">Mostrar</a>
                 </td>
-                
+
                 <!-- Boton Editar -->
                 <td>
                     <a href="{{ route('apprentice.edit', $apprentice['id']) }}" class="btn btn-warning btn-sm text-white" title="Editar">Editar</a>
@@ -59,10 +61,10 @@
                     <!-- Modal de Confirmación individual por registro -->
                     <div class="modal fade" id="modalEliminar{{ $apprentice['id'] }}" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content border-0 shadow rounded-4 overflow-hidden">
-                                <div class="modal-header bg-danger text-white">
+                            <div class="modal-content border-0 shadow rounded-4 overflow-hidden"> <!--  -->
+                                <div class="modal-header text-white" style="background-color: #b11c1c;">
                                     <h5 class="modal-title fw-bold">
-                                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar Eliminación
+                                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Confirma la Eliminación
                                     </h5>
                                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
@@ -74,7 +76,7 @@
                                     <form action="{{ route('apprentice.destroy', $apprentice['id']) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Aprendiz">
+                                        <button type="submit" btn-sm" title="Eliminar Aprendiz">
                                             <i class="bi bi-trash"></i> Borrar
                                         </button>
                                     </form>

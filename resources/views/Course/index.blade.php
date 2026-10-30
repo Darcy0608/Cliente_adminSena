@@ -41,9 +41,9 @@
                     <td>{{ optional($course['area'])['name'] }}</td>
                     <td>{{ optional($course['training_center'])['name'] ?? 'Sin centro de formación' }}</td>
 
-                    <!-- Botón Mostrar -->
+                    <!-- Boton Mostrar -->
                     <td>
-                        <a href="{{ route('course.show', $course['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
+                        <a href="{{ route('course.show', $course['id']) }}" class="btn btn-sm text-white" style="background-color: #3264ab;" title="Mostrar">Mostrar</a>
                     </td>
 
                     <!-- Botón Editar -->

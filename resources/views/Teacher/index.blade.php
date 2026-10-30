@@ -21,10 +21,10 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Email</th>
+                    <th>Nombre</th>
+                    <th>Correo Electronico</th>
                     <th>Area</th>
-                    <th>Training Center</th>
+                    <th>Centro de formación</th>
                     <th colspan="3">Acción</th>
                 </tr>
             </thead>
@@ -41,9 +41,9 @@
                     <td>{{ $teacher['area']['name'] ?? 'Sin área' }}</td>
                     <td>{{ $teacher['training_center']['name'] ?? 'Sin centro' }}</td>
 
-                    <!-- Botón Mostrar -->
+                    <!-- Boton Mostrar -->
                     <td>
-                        <a href="{{ route('teacher.show', $teacher['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
+                        <a href="{{ route('teacher.show', $teacher['id']) }}" class="btn btn-sm text-white" style="background-color: #3264ab;" title="Mostrar">Mostrar</a>
                     </td>
 
                     <!-- Botón Editar -->

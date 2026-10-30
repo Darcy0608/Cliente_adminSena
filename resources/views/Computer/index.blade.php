@@ -18,8 +18,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Number</th>
-                <th>Brand</th>
+                <th>Número</th>
+                <th>Marca</th>
+                <th>Imagen</th>
                 <th colspan="3">Acción</th>
             </tr>
         </thead>
@@ -34,9 +35,13 @@
                 <td>{{ $computer['number'] }}</td>
                 <td>{{ $computer['brand'] }}</td>
 
-                <!-- Botón Mostrar -->
                 <td>
-                    <a href="{{ route('computer.show', $computer['id']) }}" class="btn btn-info btn-sm text-white"> Mostrar </a>
+                    <img src="{{ $computer['imagen_url'] }}" alt="{{ $computer['number'] }}" width="100">
+                </td>
+
+                <!-- Boton Mostrar -->
+                <td>
+                    <a href="{{ route('computer.show', $computer['id']) }}" class="btn btn-sm text-white" style="background-color: #3264ab;" title="Mostrar">Mostrar</a>
                 </td>
 
                 <!-- Botón Editar -->

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Http;
 class HomeController extends Controller
 {
     // Método privado para manejar llamadas HTTP repetitivas
+    // Modelo fetchDataFromApi para consultar la informacion de cada modulo
     private function fetchDataFromApi(string $url){
         $response = Http::get($url);
         return $response->json();
@@ -17,6 +18,7 @@ class HomeController extends Controller
 
     public function index(){
         // Consultamos la URL de la API
+        // count() cuenta cuantos registros hay de cada uno (course, apprentice, teacher)
         $url = env('URL_SERVER_API');
 
         // Consultamos los cursos y contamos los registros

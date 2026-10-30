@@ -5,7 +5,7 @@
 
     <div class="card shadow-lg border-0">
 
-        <div class="card-header bg-primary text-white">
+        <div class="card-header text-white" style="background-color: #16780c">
             <h3 class="mb-0">
                 {{ $training_center['name'] }}
             </h3>
@@ -33,6 +33,16 @@
                     <label class="fw-bold">Ubicación</label>
                     <div class="form-control">
                         {{ $training_center['location'] }}
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Imagen</label>
+                    <div>
+                        <img src="{{ $training_center['imagen_url'] }}"
+                            alt="{{ $training_center['name'] }}"
+                            width="200"
+                            class="rounded shadow-sm">
                     </div>
                 </div>
 

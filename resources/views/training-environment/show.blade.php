@@ -6,7 +6,7 @@
 
     <div class="card shadow-lg border-0">
 
-        <div class="card-header bg-primary text-white">
+        <div class="card-header text-white" style="background-color: #16780c">
 
             <h3 class="mb-0">
                 {{ $training_environment['name'] }}

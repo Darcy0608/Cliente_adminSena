@@ -9,7 +9,7 @@
 
     <br>
 
-    <form action="{{ route('training-center.update', $training_center['id']) }}" method="POST">
+    <form action="{{ route('training-center.update', $training_center['id']) }}" method="POST" enctype="multipart/form-data">
 
         @csrf
         @method('put')
@@ -25,6 +25,23 @@
             Ubicación:
             <br>
             <input type="text" name="location" value="{{ old('location', $training_center['location']) }}">
+        </label>
+        <br>
+
+        <label>
+            Imagen actual:
+            <br>
+            <img src="{{ $training_center['imagen_url'] }}"
+                alt="{{ $training_center['name'] }}"
+                width="120">
+        </label>
+
+        <br><br>
+
+        <label>
+            Cambiar imagen:
+            <br>
+            <input type="file" name="imagen" class="form-control" accept="image/*">
         </label>
         <br><br>
 

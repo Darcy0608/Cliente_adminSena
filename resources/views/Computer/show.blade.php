@@ -5,7 +5,7 @@
 
     <div class="card shadow-lg border-0">
 
-        <div class="card-header bg-primary text-white">
+        <div class="card-header text-white" style="background-color: #16780c">
             <h3 class="mb-0">
                 {{ $computer['number'] }}
             </h3>
@@ -36,6 +36,15 @@
                     </div>
                 </div>
 
+                <div class="col-md-6 mb-3">
+                    <label class="fw-bold">Imagen</label>
+                    <div>
+                        <img src="{{ $computer['imagen_url'] }}"
+                            alt="{{ $computer['number'] }}"
+                            width="200"
+                            class="rounded shadow-sm">
+                    </div>
+                </div>
             </div>
 
             <hr>

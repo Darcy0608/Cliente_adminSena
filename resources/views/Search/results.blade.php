@@ -14,7 +14,7 @@
         @if($apprentices->isNotEmpty())
             <div class="card mb-4 shadow-sm">
                 <div class="card-header bg-primary text-white font-weight-bold">
-                    👤 Aprendices ({{ $apprentices->count() }})
+                    Aprendices ({{ $apprentices->count() }})
                 </div>
                 <div class="list-group list-group-flush">
                     @foreach($apprentices as $apprentice)
@@ -38,7 +38,7 @@
         @if($courses->isNotEmpty())
             <div class="card mb-4 shadow-sm">
                 <div class="card-header bg-success text-white">
-                    📋 Cursos / Fichas ({{ $courses->count() }})
+                    Cursos / Fichas ({{ $courses->count() }})
                 </div>
                 <div class="list-group list-group-flush">
                     @foreach($courses as $course)
@@ -58,7 +58,7 @@
         @if($computers->isNotEmpty())
             <div class="card mb-4 shadow-sm">
                 <div class="card-header bg-dark text-white">
-                    💻 Equipos / PCs ({{ $computers->count() }})
+                    Equipos / PCs ({{ $computers->count() }})
                 </div>
                 <div class="list-group list-group-flush">
                     @foreach($computers as $computer)
@@ -78,7 +78,7 @@
         @if($teachers->isNotEmpty())
             <div class="card mb-4 shadow-sm">
                 <div class="card-header bg-info text-white">
-                    👨‍🏫 Instructores ({{ $teachers->count() }})
+                    Instructores ({{ $teachers->count() }})
                 </div>
                 <div class="list-group list-group-flush">
                     @foreach($teachers as $teacher)
@@ -97,7 +97,7 @@
         {{-- Áreas y Centros --}}
         @if($areas->isNotEmpty())
             <div class="card mb-4 shadow-sm">
-                <div class="card-header bg-secondary text-white">🏫 Áreas</div>
+                <div class="card-header bg-secondary text-white">Áreas</div>
                 <div class="list-group list-group-flush">
                     @foreach($areas as $area)
                         <div class="list-group-item d-flex justify-content-between align-items-center">

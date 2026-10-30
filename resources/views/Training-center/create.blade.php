@@ -36,6 +36,11 @@
                 required>
         </div>
 
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Imagen:</label>
+            <input type="file" name="imagen" class="form-control" accept="image/*" required>
+        </div>
+
         <div class="d-flex gap-2 mt-4">
             <button type="submit" class="btn btn-success fw-semibold px-4 rounded-3">
                 Enviar Formulario

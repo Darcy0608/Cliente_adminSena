@@ -71,7 +71,7 @@
     .dropdown-menu {
         border-radius: 1rem !important;
         padding: 0.5rem !important;
-        /* Bordes redondeados de la tarjeta */
+        /* Bordes redondeados */
         border: none !important;
     }
 
